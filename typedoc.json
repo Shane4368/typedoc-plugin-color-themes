@@ -4,7 +4,7 @@
 		"node_modules/dummy-typescript-project/source/index.ts"
 	],
 	"plugin": [
-		"./src/index.js"
+		"./source/index.js"
 	],
 	"out": "documentation/0.x",
 	"readme": "README.md",

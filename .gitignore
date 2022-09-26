@@ -1,4 +1,4 @@
 .vscode/
 node_modules/
 documentation/
-src/themes.css
+*.css
