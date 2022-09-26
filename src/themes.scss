@@ -1,9 +1,7 @@
 :root {
-    --color-scheme: light dark;
-    --light-color-panel-divider: #dadada;
+    --dark-color-accent: #646464;
     --dark-color-background: #1f2127;
     --dark-color-text-aside: #ccc;
-    --dark-color-panel-divider: #12141b;
     --dark-code-background: #1a1d25;
 }
 
@@ -16,73 +14,62 @@
     --hl-5: var(--dark-hl-5);
     --hl-6: var(--dark-hl-6);
     --hl-7: var(--dark-hl-7);
+    --hl-8: var(--dark-hl-8);
+    --hl-9: var(--dark-hl-9);
+    --hl-10: var(--dark-hl-10);
+    --hl-11: var(--dark-hl-11);
+    --hl-12: var(--dark-hl-12);
 
-    --color-secondary-background: var(--dark-color-secondary-background);
+    --color-background: var(--dark-color-background);
+    --color-background-secondary: var(--dark-color-background-secondary);
+    --color-icon-background: var(--dark-color-icon-background);
+    --color-accent: var(--dark-color-accent);
     --color-text: var(--dark-color-text);
     --color-text-aside: var(--dark-color-text-aside);
     --color-link: var(--dark-color-link);
-    --color-menu-divider: var(--dark-color-menu-divider);
-    --color-menu-divider-focus: var(--dark-color-menu-divider-focus);
-    --color-menu-label: var(--dark-color-menu-label);
-    --color-comment-tag: var(--dark-color-comment-tag);
-    --color-comment-tag-text: var(--dark-color-comment-tag-text);
     --color-ts: var(--dark-color-ts);
     --color-ts-interface: var(--dark-color-ts-interface);
     --color-ts-enum: var(--dark-color-ts-enum);
     --color-ts-class: var(--dark-color-ts-class);
+    --color-ts-function: var(--dark-color-ts-function);
+    --color-ts-namespace: var(--dark-color-ts-namespace);
     --color-ts-private: var(--dark-color-ts-private);
-    --color-toolbar-text: var(--dark-color-toolbar-text);
-    --icon-filter: var(--dark-icon-filter);
+    --color-ts-variable: var(--dark-color-ts-variable);
     --external-icon: var(--dark-external-icon);
-
-    --color-panel-divider: #000;
+    --color-scheme: var(--dark-color-scheme);
 }
 
-body {
-    &.light {
-        --color-scheme: light;
-    }
-
-    &.dark {
-        --color-panel-divider: #000;
-    }
-
-    &.dark-plus {
+:root {
+    &[data-theme='dark-plus'] {
         @include dark-theme-colors();
         --color-background: #16171b;
-        --color-panel: #212225;
-        --color-toolbar: #2f3135;
         --code-background: #17181b;
     }
 
-    &.black {
+    &[data-theme='black'] {
         @include dark-theme-colors();
         --color-background: #000;
-        --color-panel: #050505;
-        --color-toolbar: #101010;
-        --code-background: var(--color-panel);
+        --code-background: inherit;
     }
 
-    &.midnight-blue {
+    &[data-theme='midnight-blue'] {
         @include dark-theme-colors();
+        --color-accent: #4d5158;
         --color-background: #030513;
-        --color-panel: #080b23;
-        --color-toolbar: #0f1333;
         --code-background: #06091b;
     }
 }
 
-html {
-    color-scheme: var(--color-scheme);
-}
-
 #theme {
-    padding: 0.1rem;
-    border: 1px solid var(--color-text-aside);
+    border: 1px solid var(--color-accent);
     background-color: inherit;
-    color: var(--color-text);
+    color: inherit;
 
     >option {
         background-color: var(--color-background);
     }
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-text-aside);
 }

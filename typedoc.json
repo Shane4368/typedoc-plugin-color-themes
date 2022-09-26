@@ -1,0 +1,13 @@
+{
+	"tsconfig": "node_modules/dummy-typescript-project/tsconfig.json",
+	"entryPoints": [
+		"node_modules/dummy-typescript-project/source/index.ts"
+	],
+	"plugin": [
+		"./src/index.js"
+	],
+	"out": "documentation/0.x",
+	"readme": "README.md",
+	"darkHighlightTheme": "material-ocean",
+	"includeVersion": true
+}
