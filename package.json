@@ -1,5 +1,5 @@
 {
-    "name": "typedoc-plugin-themes",
+    "name": "@shane4368/typedoc-plugin-color-themes",
     "version": "0.1.0",
     "description": "A TypeDoc plugin that modifies the colors of the builtin themes and adds more to select from.",
     "exports": "./src/index.js",
