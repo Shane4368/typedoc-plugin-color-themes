@@ -49,6 +49,7 @@
     &[data-theme='black'] {
         @include dark-theme-colors();
         --color-background: #000;
+        --color-text-aside: #aaa;
         --code-background: inherit;
     }
 
