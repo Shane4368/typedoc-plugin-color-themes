@@ -1,0 +1,36 @@
+name: Build & Deploy Documentation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - source/**
+      - README.md
+      - typedoc.json
+
+permissions:
+  contents: read
+
+jobs:
+  documentation:
+    name: Documentation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: lts/*
+
+      - run: npm ci
+      - run: npm install --save-dev @types/node
+      - run: npm run-script docs
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_dir: documentation/
+          keep_files: true
